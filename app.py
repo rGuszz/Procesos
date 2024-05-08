@@ -11,6 +11,7 @@ opciones = st.container()
 with titulo:
     st.title("Bienvenido a la interfaz para calcular el precio de opciones y ver otros datos")
     df = pd.read_csv(r'nasdaq_screener_1715204451275.csv', usecols=["Symbol"])
+    df['Symbol'] = df['Symbol'].astype(str)
     dynamic_filters = DynamicFilters(df, filters=['Symbol'])
 
 with st.sidebar:
