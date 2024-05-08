@@ -11,7 +11,12 @@ opciones = st.container()
 with titulo:
     st.title("Bienvenido a la interfaz para calcular el precio de opciones y ver otros datos")
     df = pd.read_csv(r'nasdaq_screener_1715204451275.csv', usecols=["Symbol"])
-    st.write(df)
+    dynamic_filters = DynamicFilters(df, filters=['Symbol'])
+
+with st.sidebar:
+    dynamic_filters.display_filters()
+
+dynamic_filters.display_df()
     #activo = st.text_input("Buscar un activo", value="AAPL")
     #filtro = DynamicFilters(df=df,filters=["Activos"])
     #filtro.display_filters()
