@@ -14,9 +14,6 @@ with titulo:
 
     st.sidebar.header("Filtros")
     activo = st.sidebar.multiselect("Elije", options=df["Symbol"], max_selections=1)
-    #activo = st.text_input("Buscar un activo", value="AAPL")
-    #filtro = DynamicFilters(df=df,filters=["Activos"])
-    #filtro.display_filters()
 
 with datos:
     st.header("Precios del activo y gráfica")
