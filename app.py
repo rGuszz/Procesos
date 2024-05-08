@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import yfinance as yf
 import procesos as pr
+import streamlit_pandas as sp
 
 titulo = st.container()
 datos = st.container()
