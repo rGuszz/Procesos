@@ -111,3 +111,20 @@ def precio_asiatica_geo(activo,n,j,K):
     payoff[k] = max(K-np.exp((1/len(trayecs.transpose()[k,:]))*sum(map(np.log,trayecs.transpose()[k,:]))),0)
   precio_geo = np.exp(-0.0797*(T))*(1/j)*(sum(payoff))
   return precio_geo
+
+ def local_css(file_name):
+        with open() as f:
+            st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+    
+        def remote_css(url):
+            st.markdown(f'<link href="{url}" rel="stylesheet">', unsafe_allow_html=True)    
+        
+        def icon(icon_name):
+            st.markdown(f'<i class="material-icons">{icon_name}</i>', unsafe_allow_html=True)
+        
+        local_css("style.css")
+        remote_css('https://fonts.googleapis.com/icon?family=Material+Icons')
+        
+        icon("search")
+        selected = st.text_input("", "Search...")
+        button_clicked = st.button("OK")
