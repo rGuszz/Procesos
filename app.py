@@ -9,11 +9,12 @@ opciones = st.container()
 
 with titulo:
     st.title("Bienvenido a la interfaz para calcular el precio de opciones y ver otros datos")
+    tickers = pd.read_csv(r'C:\Users\gusta\OneDrive\Escritorio\Streamlit\nasdaq_screener_1715204451275.csv', usecols=["Symbol"])
+    st.dataframe(tickers)
     activo = st.text_input("Introduce el nombre del activo", value="AAPL") 
 
 with datos:
     st.header("Precios del activo y gráfica")
-    st.write("Nop")
     st.text("Los últimos 182 precios del activo se muestran en la siguiente tabla y se muestra un gráfico")
     df = pr.precio(activo)
     df = pr.precio(activo).iloc[::-1]
