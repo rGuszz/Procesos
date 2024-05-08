@@ -14,9 +14,7 @@ with titulo:
     pr.local_css("style.css")
     pr.remote_css('https://fonts.googleapis.com/icon?family=Material+Icons') 
     
-    pr.icon("search")
     selected = st.text_input("", "Search...")
-    button_clicked = st.button("OK")
     activo = st.text_input("Introduce el nombre del activo", value="AAPL") 
 
 with datos:
