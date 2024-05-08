@@ -14,7 +14,7 @@ with titulo:
 
     st.sidebar.header("Filtro")
     empresa = st.sidebar.multiselect("Elije una opción", options=df["Name"], max_selections=1, default="Apple Inc. Common Stock")
-    activo = df[df.loc["Name"] == empresa]["Symbol"]
+    activo = df[df["Name"] == empresa]["Symbol"]
 
 with datos:
     st.header("Precios del activo y gráfica")
