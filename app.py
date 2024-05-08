@@ -12,8 +12,8 @@ with titulo:
     st.title("Bienvenido a la interfaz para calcular el precio de opciones y ver otros datos")
     df = pd.read_csv(r'nasdaq_screener_1715204451275.csv', usecols=["Symbol"])
 
-    st.sidebar.header("Filtros")
-    activo = st.sidebar.multiselect("Elije", options=df["Symbol"], max_selections=1)
+    st.sidebar.header("Filtro")
+    activo = st.sidebar.multiselect("Elije el activo", options=df["Symbol"], max_selections=1)
 
 with datos:
     st.header("Precios del activo y gráfica")
