@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import yfinance as yf
 import procesos as pr
-from streamlit_dynamic_filters import DynamicFilters as dyf
+from streamlit_dynamic_filters import DynamicFilters
 
 titulo = st.container()
 datos = st.container()
@@ -10,11 +10,10 @@ opciones = st.container()
 
 with titulo:
     st.title("Bienvenido a la interfaz para calcular el precio de opciones y ver otros datos")
-    tickers = pd.read_csv(r'nasdaq_screener_1715204451275.csv', usecols=["Symbol"])
-    activo = st.text_input("Buscar un activo", value="AAPL")
-    filtro = dyf(df=tickers,filters=["Symbol"])
+    df = pd.read_csv(r'nasdaq_screener_1715204451275.csv', usecols=["Symbol"])
+    #activo = st.text_input("Buscar un activo", value="AAPL")
+    filtro = DynamicFilters(df=df,filters=["Symbol"])
     filtro.display_filters()
-    filtro.display_df()
 
 with datos:
     st.header("Precios del activo y gráfica")
