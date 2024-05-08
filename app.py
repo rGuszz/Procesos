@@ -10,12 +10,11 @@ opciones = st.container()
 with titulo:
     st.title("Bienvenido a la interfaz para calcular el precio de opciones y ver otros datos")
     tickers = pd.read_csv(r'nasdaq_screener_1715204451275.csv', usecols=["Symbol"])
-    
-    pr.local_css("style.css")
-    pr.remote_css('https://fonts.googleapis.com/icon?family=Material+Icons') 
-    
-    selected = st.text_input("", "Search...")
-    activo = st.text_input("Introduce el nombre del activo", value="AAPL") 
+    activo = st.text_input("Buscar un activo", value="")
+    m1 = tickers["Symbol"].str.contains(activo)
+    if activo:
+        st.write(activo)
+    #activo = st.text_input("Introduce el nombre del activo", value="AAPL") 
 
 with datos:
     st.header("Precios del activo y gráfica")
