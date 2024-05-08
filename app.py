@@ -13,7 +13,7 @@ with titulo:
     df = pd.read_csv(r'nasdaq_screener_1715204451275.csv', usecols=["Symbol"])
 
     st.sidebar.header("Filtros")
-    activo = st.sidebar.multiselct("Elije", options=df["Symbol"])
+    activo = st.sidebar.multiselect("Elije", options=df["Symbol"])
     #activo = st.text_input("Buscar un activo", value="AAPL")
     #filtro = DynamicFilters(df=df,filters=["Activos"])
     #filtro.display_filters()
