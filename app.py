@@ -13,7 +13,7 @@ with titulo:
     df = pd.read_csv(r'nasdaq_screener_1715204451275.csv', usecols=["Symbol"])
 
     st.sidebar.header("Filtro")
-    activo = st.sidebar.multiselect("Elije el activo", options=df["Symbol"], max_selections=1, value="AAPL")
+    activo = st.sidebar.multiselect("Elije el activo", options=df["Symbol"], max_selections=1, default="AAPL")
 
 with datos:
     st.header("Precios del activo y gráfica")
