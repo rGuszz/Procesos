@@ -110,11 +110,4 @@ def precio_asiatica_geo(activo,n,j,K):
   for k in range(j):
     payoff[k] = max(K-np.exp((1/len(trayecs.transpose()[k,:]))*sum(map(np.log,trayecs.transpose()[k,:]))),0)
   precio_geo = np.exp(-0.0797*(T))*(1/j)*(sum(payoff))
-  return precio_geo
-
-def local_css(file_name):
-    with open(file_name) as f:
-        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-    
-def remote_css(url):
-        st.markdown(f'<link href="{url}" rel="stylesheet">', unsafe_allow_html=True)    
+  return precio_geo 
