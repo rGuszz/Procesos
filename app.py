@@ -16,7 +16,7 @@ with titulo:
 
     st.sidebar.header("Filtro")
     empresa = st.sidebar.multiselect("Elije una opción", options=df.index, max_selections=1, default="Apple Inc. Common Stock", key="str")
-    activ = df.loc[[empresa],["Symbol"]]
+    activ = df.loc[["Apple Inc. Common Stock"],["Symbol"]]
     st.write(activ)
     
 with datos:
