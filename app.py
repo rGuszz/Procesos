@@ -17,7 +17,7 @@ with titulo:
     e = str(empresa)
     st.write(e)
     #activo = df[df["Name"] == empresa]["Symbol"]
-activo = "AAPL"
+    activo = "AAPL"
 
 with datos:
     st.header("Precios del activo y gráfica")
