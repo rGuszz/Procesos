@@ -13,7 +13,7 @@ with titulo:
     activo = st.text_input("Buscar un activo", value="")
     m1 = tickers["Symbol"].str.contains(activo)
     if activo:
-        st.write(activo)
+        st.write(m1)
     #activo = st.text_input("Introduce el nombre del activo", value="AAPL") 
 
 with datos:
