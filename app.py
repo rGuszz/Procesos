@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import yfinance as yf
 import procesos as pr
-import streamlit_pandas as sp
 
 titulo = st.container()
 datos = st.container()
@@ -11,10 +10,7 @@ opciones = st.container()
 with titulo:
     st.title("Bienvenido a la interfaz para calcular el precio de opciones y ver otros datos")
     tickers = pd.read_csv(r'nasdaq_screener_1715204451275.csv', usecols=["Symbol"])
-    #activo = st.text_input("Buscar un activo", value="AAPL")
-
-    all_widgets = sp.create_widgets(tickers)
-    res = sp.filter_df(df, all_widgets)
+    activo = st.text_input("Buscar un activo", value="AAPL")
 
 with datos:
     st.header("Precios del activo y gráfica")
