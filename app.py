@@ -12,7 +12,7 @@ with titulo:
     st.title("Bienvenido a la interfaz para calcular el precio de opciones y ver otros datos")
     df = pd.read_csv(r'nasdaq_screener_1715204451275.csv', usecols=["Symbol"])
     #activo = st.text_input("Buscar un activo", value="AAPL")
-    filtro = DynamicFilters(df=df,filters=["Symbol"])
+    filtro = DynamicFilters(df=df,filters=["Activos"])
     filtro.display_filters()
 
 with datos:
