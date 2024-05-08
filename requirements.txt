@@ -5,4 +5,4 @@ matplotlib
 scipy
 streamlit
 plotly
-streamlit_pandas
+streamlit-dynamic-filters
