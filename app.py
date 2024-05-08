@@ -11,11 +11,10 @@ opciones = st.container()
 with titulo:
     st.title("Bienvenido a la interfaz para calcular el precio de opciones y ver otros datos")
     tickers = pd.read_csv(r'nasdaq_screener_1715204451275.csv', usecols=["Symbol"])
-    activo = st.text_input("Buscar un activo", value="AAPL")
-    m1 = tickers["Symbol"].str.contains(activo)
-    if activo:
-        st.write(m1)
-    #activo = st.text_input("Introduce el nombre del activo", value="AAPL") 
+    #activo = st.text_input("Buscar un activo", value="AAPL")
+
+    all_widgets = sp.create_widgets(tickers)
+    res = sp.filter_df(df, all_widgets)
 
 with datos:
     st.header("Precios del activo y gráfica")
