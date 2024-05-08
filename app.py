@@ -16,9 +16,8 @@ with titulo:
     empresa = st.sidebar.multiselect("Elije una opción", options=df["Name"], max_selections=1, default="Apple Inc. Common Stock")
     e = str(empresa)
     st.write(e)
-    #activo = df[df["Name"] == empresa]["Symbol"]
-    activo = "AAPL"
-
+    activo = df[df["Name"] == e]["Symbol"]
+    
 with datos:
     st.header("Precios del activo y gráfica")
     st.text("Los últimos 182 precios del activo se muestran en la siguiente tabla y se muestra un gráfico")
