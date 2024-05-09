@@ -23,9 +23,6 @@ with titulo:
         st.write(f"El activo es {activo}")
     except:
         st.error("No hay empresa seleccionada")
-    st.write(f"La empresa escogida es {empresa}")
-    activo = df["Symbol"][empresa]
-    st.write(f"El activo es {activo}")
     
 with datos:
     st.header("Precios del activo y gráfica")
