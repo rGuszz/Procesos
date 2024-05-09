@@ -11,13 +11,14 @@ opciones = st.container()
 with titulo:
     st.title("Bienvenido a la interfaz para calcular el precio de opciones y ver otros datos")
     df = pd.read_csv(r'nasdaq_screener_1715204451275.csv', usecols=["Name", "Symbol"])
+    df = df.set_index("Name")
     st.write(df)
 
     st.sidebar.header("Filtro")
     e = st.sidebar.multiselect("Elije una opción", options=df["Name"], max_selections=1, default="Apple Inc. Common Stock", key="str")
     empresa = e[0]
     st.write(empresa)
-    activo = "AAPL"
+    activo = df["Symbol"][empresa]
     st.write(activo)
     
 with datos:
