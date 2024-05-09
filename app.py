@@ -10,7 +10,7 @@ opciones = st.container()
 
 with titulo:
     st.title("Bienvenido a la interfaz para calcular el precio de opciones y ver otros datos")
-    df = pd.read_csv(r'nasdaq_screener_1715204451275.csv', usecols=["Symbol", "Name"])
+    df = pd.read_csv(r'nasdaq_screener_1715204451275.csv', usecols=["Name", "Symbol"])
     st.write(df)
 
     st.sidebar.header("Filtro")
