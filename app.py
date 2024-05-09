@@ -17,9 +17,9 @@ with titulo:
     st.sidebar.header("Filtro")
     e = st.sidebar.multiselect("Elije una opción", options=df.index, max_selections=1, default="Apple Inc. Common Stock", key="str")
     empresa = e[0]
-    st.write(empresa)
+    st.write(f"La empresa escogida es {empresa}")
     activo = df["Symbol"][empresa]
-    st.write(activo)
+    st.write(f"El activo es {activo}")
     
 with datos:
     st.header("Precios del activo y gráfica")
@@ -36,7 +36,7 @@ with opciones:
     st.write(f"La volatilidad del activo {activo} es de {round(vol*100,2)}%")
     
     st.header(f"Precio de la opción europea vainilla tipo put del activo {activo}")
-    K = st.slider("Precio Strike", min_value=0.00, max_value=1000.00, step=0.01, value=200.00)
+    K = st.slider("Precio Strike", min_value=0.00, max_value=10000.00, step=0.01, value=200.00)
     
     st.subheader("Cálculo con simulación")
     precio_put = pr.opcion_put(activo, K)
