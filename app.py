@@ -17,7 +17,7 @@ with titulo:
     e = st.sidebar.multiselect("Elije una opción", options=df["Name"], max_selections=1, default="Apple Inc. Common Stock", key="str")
     empresa = e[0]
     st.write(empresa)
-    activo = 
+    activo = "AAPL"
     st.write(activo)
     
 with datos:
