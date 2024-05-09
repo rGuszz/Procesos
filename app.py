@@ -16,8 +16,8 @@ with titulo:
     st.sidebar.header("Filtro")
     e = st.sidebar.multiselect("Elije una opción", options=df["Name"], max_selections=1, default="Apple Inc. Common Stock", key="str")
     empresa = str(e)
-    st.write(print(type(empresa)))
-    activo = "AAPL"
+    st.write(empresa)
+    activo = df.loc[0,"Symbol"]
     st.write(activo)
     
 with datos:
