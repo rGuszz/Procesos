@@ -18,7 +18,7 @@ with titulo:
     try:
         e = st.sidebar.multiselect("Elije una opción", options=df.index, max_selections=1, default="Apple Inc. Common Stock", key="str")
     except:
-        st.error(r‘Please enter a valid input’)
+        st.error("No hay empresa seleccionada")
     empresa = e[0]
     st.write(f"La empresa escogida es {empresa}")
     activo = df["Symbol"][empresa]
