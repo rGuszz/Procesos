@@ -56,7 +56,7 @@ try:
         j = st.slider("Elije el número de trayectorias a simular", min_value=1, max_value=10000, value=100)
         pr.trayectorias(activo, j, n)
         
-        st.header(f"Precio de la opción asiatica europea vainilla tipo put del activo {activo}")
+        st.header(f"Precio de la opción asiatica europea vainilla tipo call del activo {activo}")
         num = st.slider("Escoje el numero de subintervalos en los que estará divido el tiempo ", min_value=1, max_value=1000, value=50)
         jp = st.slider("Elije el número de trayectorias a simular para hacer el cálculo", min_value=1, max_value=10000, value=100)
         
