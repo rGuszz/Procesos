@@ -15,7 +15,7 @@ def precio(a):
 
 def volatilidad(activo):
   sumandos = (precio(activo).apply(lambda x: math.log(x)).diff().dropna()).apply(lambda x: x**2)
-  vol = np.sqrt((252/len(sumandos)*(sumandos.sum())))
+  vol = np.sqrt((1/T*(sumandos.sum())))
   return vol
 
 def max(a,b):
