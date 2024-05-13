@@ -74,7 +74,8 @@ def trayectorias(activo, j, n):
   estilo = go.Layout(title=f"Gráfica de {j} trayectorias simuladas del activo {activo}", showlegend=False)
   fig = go.Figure(data=graficas, layout=estilo)
   fig.update_layout(dragmode="pan")
-  return st.plotly_chart(fig)
+  rueda = dict({"scrollZoom": True})
+  return st.plotly_chart(fig, config=rueda)
 
 def precio_asiatica(activo,n,j):
     trayecs = np.zeros((n+1,j))
