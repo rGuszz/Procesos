@@ -90,7 +90,7 @@ def precio_asiatica(activo,n,j):
          trayecs[i+1,k] = trayecs[i,k]*(np.exp(e_1+e_2*(np.random.normal())))
 
     for k in range(j):
-     payoff[k] = max(trayecs.transpose()[k,:].mean()-trayecs.transpose()[k,-1],0)
+     payoff[k] = max(trayecs.transpose()[k,-1] - trayecs.transpose()[k,:].mean(),0)
     precioo = np.exp(-0.0797*(T))*(1/j)*(sum(payoff))
     return precioo
 
@@ -108,6 +108,6 @@ def precio_asiatica_geo(activo,n,j,K):
           trayecs[i+1,k] = trayecs[i,k]*(np.exp(e_1+e_2*(np.random.normal())))
 
   for k in range(j):
-    payoff[k] = max(K-np.exp((1/len(trayecs.transpose()[k,:]))*sum(map(np.log,trayecs.transpose()[k,:]))),0)
+    payoff[k] = max(np.exp((1/len(trayecs.transpose()[k,:]))*sum(map(np.log,trayecs.transpose()[k,:])))-K,0)
   precio_geo = np.exp(-0.0797*(T))*(1/j)*(sum(payoff))
   return precio_geo 
