@@ -65,7 +65,7 @@ try:
         st.write(f"\nEl precio de la opción asiática de {activo} calculado con el promedio aritmético al dia de hoy es de ${round(precio_asiatica_put,2)}")
         
         st.subheader("Cálculo con el promedio geométrico")
-        K_1 = st.slider("Precio Strike para la opción asiática", min_value=0.00, max_value=10000.00, step=0.01, value=200.00)
+        K_1 = st.slider("Precio Strike para la opción asiática", min_value=0.00, max_value=5000.00, step=0.01, value=200.00)
         precio_asiatica_put_geo = pr.precio_asiatica_geo(activo,num,jp,K_1)
         st.write(f"\nEL precio de la opción asiática de {activo} calculado con el promedio geometrico al dia de hoy es de ${round(precio_asiatica_put_geo,2)}")
 except:
