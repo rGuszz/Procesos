@@ -71,7 +71,7 @@ def trayectorias(activo, j, n):
   dataframes = [pd.DataFrame({"Valores":trayecs.transpose()[i]}) for i in range(j)]    
   graficas = [go.Line(x=dataframes[i].index, y=dataframes[i]["Valores"], mode="lines", name=f"Trayectoria {i+1}") for i in range(j)]
   # dic = {"x":0.9, "y":0.9, "xref":"container", "yref":"container", "bgcolor":"#E6F2FC"}
-  estilo = go.Layout(title=f"Gráfica de {j} trayectorias simuladas del activo {activo}", legend=None)
+  estilo = go.Layout(title=f"Gráfica de {j} trayectorias simuladas del activo {activo}", showlegend=False)
   fig = go.Figure(data=graficas, layout=estilo)
   return st.plotly_chart(fig)
 
