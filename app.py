@@ -65,7 +65,7 @@ try:
         st.write(f"\nEl precio de la opción asiática de {activo} calculado con el promedio aritmético al dia de hoy es de ${round(precio_asiatica_put,2)}")
         
         st.subheader("Cálculo con el promedio geométrico")
-        st.latex("Notemos que el promedio aritmetico esta dado por $(\displaystyle\prod_{i=0}^n S_{t_i})^{\frac{1}{n}}$")
+        st.latex(r'''a + ar + a r^2 + a r^3 + \cdots + a r^{n-1} = \sum_{k=0}^{n-1} ar^k = a \left(\frac{1-r^{n}}{1-r}\right)''')
         K_1 = st.slider("Precio Strike para la opción asiática", min_value=0.00, max_value=5000.00, step=0.01, value=160.00)
         precio_asiatica_put_geo = pr.precio_asiatica_geo(activo,num,jp,K_1)
         st.write(f"\nEL precio de la opción asiática de {activo} calculado con el promedio geometrico al dia de hoy es de ${round(precio_asiatica_put_geo,2)}")
