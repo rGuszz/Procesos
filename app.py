@@ -13,8 +13,8 @@ try:
         st.title("Bienvenido a la interfaz para calcular el precio de opciones y ver otros datos")
         df = pd.read_csv(r'nasdaq_screener_1715204451275.csv', usecols=["Name", "Symbol"])
         df = df.set_index("Name")
+        st.write("Escoje una empresa en la barra del lado izquierdo (Puedes usar el teclado para buscar)")
         
-    
         st.sidebar.header("Filtro")
         e = st.sidebar.multiselect("Elije una opción", options=df.index, max_selections=1, default="Apple Inc. Common Stock", key="str")
         empresa = e[0]
